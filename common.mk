@@ -87,7 +87,7 @@ ENC_MK        = enc.mk
 MAKE_ENC      = -f $(ENC_MK) V="$(V)" UNICODE_HDR_DIR="$(UNICODE_HDR_DIR)" \
 		RUBY="$(BOOTSTRAPRUBY)" MINIRUBY="$(BOOTSTRAPRUBY)" $(mflags)
 
-PRISM_BUILD_DIR = prism
+PRISM_BUILD_DIR = $(abs_builddir)/prism
 
 PRISM_FILES = prism/api_node.$(OBJEXT) \
 		prism/api_pack.$(OBJEXT) \
@@ -1097,10 +1097,12 @@ strlcpy.$(OBJEXT): {$(VPATH)}strlcpy.c
 strstr.$(OBJEXT): {$(VPATH)}strstr.c
 tgamma.$(OBJEXT): {$(VPATH)}tgamma.c
 
+COROUTINE_TIME = $(abs_builddir)/$(COROUTINE_H:/Context.h=/.time)
+
 .coroutine_obj $(COROUTINE_OBJ): \
 	{$(VPATH)}$(COROUTINE_SRC) \
-	$(COROUTINE_H:/Context.h=/.time)
-$(COROUTINE_H:/Context.h=/.time):
+	$(COROUTINE_TIME)
+$(COROUTINE_TIME):
 	$(Q) $(MAKEDIRS) $(@D)
 	@$(NULLCMD) > $@
 

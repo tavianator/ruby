@@ -2,7 +2,7 @@ PRISM_TEMPLATES_DIR = $(PRISM_SRCDIR)/templates
 PRISM_TEMPLATE = $(PRISM_TEMPLATES_DIR)/template.rb
 PRISM_CONFIG = $(PRISM_SRCDIR)/config.yml
 
-srcs uncommon.mk: prism/.srcs.mk.time
+srcs uncommon.mk: $(PRISM_BUILD_DIR)/.srcs.mk.time
 
 prism/.srcs.mk.time: $(order_only) $(PRISM_BUILD_DIR)/.time
 prism/$(HAVE_BASERUBY:no=.srcs.mk.time):

@@ -20,6 +20,7 @@ srcdir = @srcdir@
 top_srcdir = $(srcdir)
 hdrdir = $(srcdir)/include
 tooldir = $(srcdir)/tool
+abs_builddir = @abs_builddir@
 
 PLATFORM_DIR = @PLATFORM_DIR@
 
@@ -75,7 +76,7 @@ TESTS =
 INSTALLDOC = @INSTALLDOC@
 DOCTARGETS = @RDOCTARGET@ @CAPITARGET@
 
-EXTOUT = @EXTOUT@
+EXTOUT = @abs_builddir@/@EXTOUT@
 TIMESTAMPDIR  = $(EXTOUT)/.timestamp
 ext_hdrdir = $(EXTOUT)/include
 arch_hdrdir = $(ext_hdrdir)/$(arch)

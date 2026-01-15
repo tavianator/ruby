@@ -14,7 +14,7 @@ top_srcdir = $(encsrcdir:/enc=)
 srcdir = $(top_srcdir)
 tooldir = $(top_srcdir)/tool
 arch = @arch@
-EXTOUT = @EXTOUT@
+EXTOUT = @abs_builddir@/@EXTOUT@
 hdrdir = $(srcdir)/include
 arch_hdrdir = $(EXTOUT)/include/$(arch)
 ENCSODIR = $(EXTOUT)/$(arch)/enc

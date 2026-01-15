@@ -294,6 +294,7 @@ print <<EOS
   CONFIG["platform"] = #{platform || '"$(arch)"'}
   CONFIG["archdir"] = "$(rubyarchdir)"
   CONFIG["topdir"] = File.dirname(__FILE__)
+  CONFIG["abs_builddir"] = __dir__
   # Almost same with CONFIG. MAKEFILE_CONFIG has other variable
   # reference like below.
   #
